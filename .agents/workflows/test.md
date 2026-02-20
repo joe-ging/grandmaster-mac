@@ -16,7 +16,15 @@ cd /Users/jingsmacbookpro/.gemini/antigravity/scratch/grandmaster-mac/frontend
 npm test
 ```
 
-2. If tests **pass**, you are safe to commit your changes using `/git-push`.
+// turbo
+2. Run the backend tests:
+```bash
+cd /Users/jingsmacbookpro/.gemini/antigravity/scratch/grandmaster-mac/backend
+source ../venv/bin/activate
+pytest -W ignore
+```
+
+3. If tests **pass**, you are safe to commit your changes using `/git-push`.
 
 3. If tests **fail**:
    - DO NOT commit.
