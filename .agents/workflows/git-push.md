@@ -18,7 +18,15 @@ Run this workflow after completing any meaningful chunk of work:
 ## Steps
 
 // turbo
-1. Check what changed:
+1. Run tests to ensure nothing is broken before saving:
+```bash
+cd /Users/jingsmacbookpro/.gemini/antigravity/scratch/grandmaster-mac/frontend
+npm test
+```
+If tests fail, STOP here and fix the issues before proceeding.
+
+// turbo
+2. Check what changed:
 ```bash
 cd /Users/jingsmacbookpro/.gemini/antigravity/scratch/grandmaster-mac
 git status
