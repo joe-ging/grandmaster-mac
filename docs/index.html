@@ -55,8 +55,15 @@
             <span class="pricing-tag">🎉 Free for the first 100 users</span>
             <span class="pricing-detail">One-time purchase after that — no subscriptions, ever.</span>
         </div>
+
+        <div class="download-counter" id="download-counter"
+            style="display: none; margin-bottom: 24px; font-size: 14px; color: var(--text-secondary); font-weight: 500;">
+            <span id="download-count-number" class="text-neon" style="font-weight: 700;">0</span> / 100 free copies
+            claimed
+        </div>
+
         <div class="hero-cta">
-            <a href="https://github.com/joe-ging/macbase/releases" class="btn-primary" id="download">
+            <a href="#" class="btn-primary tally-link" id="download">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -454,7 +461,7 @@
             <p>Download macbase and start studying real OTB chess games on your Mac.<br>Open source, unlimited database.
                 <strong>Free for the first 100 users.</strong>
             </p>
-            <a href="https://github.com/joe-ging/macbase/releases" class="btn-primary large">
+            <a href="#" class="btn-primary large tally-link">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -502,6 +509,39 @@
                 });
             });
         });
+
+        // Fetch download count from GitHub API
+        async function fetchDownloadCount() {
+            try {
+                // Fetch releases from the public repo
+                const response = await fetch('https://api.github.com/repos/joe-ging/macbase/releases');
+                if (!response.ok) return;
+
+                const releases = await response.json();
+                let totalDownloads = 0;
+
+                // Sum downloads across all assets in all releases (if multiple)
+                releases.forEach(release => {
+                    release.assets.forEach(asset => {
+                        totalDownloads += asset.download_count;
+                    });
+                });
+
+                if (totalDownloads > 0) {
+                    const counterEl = document.getElementById('download-counter');
+                    const countNumberEl = document.getElementById('download-count-number');
+
+                    if (counterEl && countNumberEl) {
+                        countNumberEl.textContent = totalDownloads;
+                        counterEl.style.display = 'block';
+                    }
+                }
+            } catch (error) {
+                console.error("Could not fetch download count:", error);
+            }
+        }
+
+        fetchDownloadCount();
     </script>
 </body>
 
