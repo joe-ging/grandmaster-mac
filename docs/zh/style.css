@@ -106,18 +106,6 @@ body {
     color: var(--text-primary);
 }
 
-.lang-switch {
-    opacity: 0.6;
-    border: 1px solid var(--border-subtle);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 11px !important;
-}
-
-.lang-switch:hover {
-    opacity: 1;
-}
-
 .btn-download-nav {
     background: var(--neon-lime) !important;
     color: #000 !important;

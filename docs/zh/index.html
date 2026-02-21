@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macbase — 专为 Mac 打造的国际象棋分析工具</title>
+    <meta name="description" content="Mac 用户期待已久的 ChessBase 替代方案。由 TWIC 免费每周对局库提供支持。本地优先，Stockfish 强力驱动。前 100 名用户免费。">
+    <meta name="keywords" content="国际象棋, mac, chessbase, 分析, stockfish, 开局, 库, pgn, 免费, TWIC, 线下赛, FIDE">
+    <meta property="og:title" content="macbase — 专为 Mac 打造的国际象棋分析工具">
+    <meta property="og:description"
+        content="专为 Mac 打造的国际象棋分析工具。TWIC 每周更新对局库。Stockfish 引擎，开局库构建，按等级分查看开局见解。前 100 名用户免费。">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=2">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">♞</span>
+                <span class="logo-text">mac<span class="text-neon">base</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="#walkthrough">功能</a>
+                <a href="#compare">对比</a>
+                <a href="https://github.com/joe-ging/macbase" target="_blank">GitHub</a>
+                <a href="../index.html" class="lang-switch">English</a>
+                <a href="https://tally.so/r/QKDjA1" class="btn-download-nav" target="_blank">立即下载</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-badge">开源 · 本地优先 · 前 100 名用户免费</div>
+        <h1 class="hero-title">
+            专为 Mac 打造的<br>
+            <span class="text-neon">国际象棋分析神器</span>
+        </h1>
+        <p class="hero-subtitle">
+            Mac 用户期待已久的 ChessBase 替代方案。<br>
+            由 <a href="https://theweekinchess.com/" target="_blank" class="twic-link">TWIC</a> 提供支持 — 全球最大的免费对局库，<br>
+            每周同步更新数千场真实的线下 OTB 锦标赛对局。<br>
+            <strong>无私有格式，无订阅费用。纯粹的 PGN 体验。</strong>
+        </p>
+        <div class="hero-pricing">
+            <span class="pricing-tag">🎉 前 100 名用户免费下载</span>
+            <span class="pricing-detail">之后仅需一次性购买 — 永远没有订阅费。</span>
+        </div>
+
+        <div class="download-counter" id="download-counter"
+            style="display: none; margin-bottom: 24px; font-size: 14px; color: var(--text-secondary); font-weight: 500;">
+            已有 <span id="download-count-number" class="text-neon" style="font-weight: 700;">0</span> / 100 名用户领取
+        </div>
+
+        <div class="hero-cta">
+            <a href="https://tally.so/r/QKDjA1" class="btn-primary" id="download" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                下载 Mac 版
+            </a>
+            <a href="https://github.com/joe-ging/macbase" class="btn-secondary" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+                查看 GitHub 源码
+            </a>
+        </div>
+        <p class="hero-note">支持 macOS 12+ · Apple 芯片及 Intel · 未签名 DMG (详见安装指南)</p>
+    </section>
+
+    <!-- ===== 功能演示 ===== -->
+    <section class="walkthrough" id="walkthrough">
+
+        <!-- 1. DASHBOARD -->
+        <div class="feature-block">
+            <div class="feature-text">
+                <div class="feature-number">01</div>
+                <h2>指挥中心</h2>
+                <p class="feature-highlight">您的国际象棋任务控制室。</p>
+                <p>
+                    一键从 <a href="https://theweekinchess.com/" target="_blank" class="twic-link">TWIC</a>
+                    （全球最大的免费象棋档案库）导入对局。每周都会发布包含数千场 FIDE 真实线下赛的新期刊。
+                    实时监控数据库容量、导入进度，紧跟全球顶级赛事。
+                </p>
+                <ul class="feature-bullets">
+                    <li>一键导入 TWIC — 每周持续更新</li>
+                    <li>真实的 OTB 锦标赛对局，而非网络超快棋</li>
+                    <li>数据库随导入不断增长 — 无限制，本地存储</li>
+                    <li>所有数据都留在您的 Mac 上 — 无需云端，无需账号</li>
+                </ul>
+            </div>
+            <div class="screenshot-carousel" data-carousel>
+                <div class="carousel-viewport">
+                    <div class="carousel-slide active">
+                        <div class="feature-screenshot">
+                            <img src="../screenshots/dashboard.png" alt="macbase 仪表盘" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="feature-screenshot">
+                            <img src="../screenshots/dashboard2.png" alt="macbase 数据库状态" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" data-index="0" aria-label="Screenshot 1"></button>
+                    <button class="carousel-dot" data-index="1" aria-label="Screenshot 2"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. DATABASE -->
+        <div class="feature-block reverse">
+            <div class="feature-text">
+                <div class="feature-number">02</div>
+                <h2>情报数据库</h2>
+                <p class="feature-highlight">过滤、筛选、深入研究每一局。</p>
+                <p>
+                    轻松浏览您的整个棋谱库。按棋手姓名、等级分范围、ECO 代码、赛事或 TWIC 期号进行过滤。
+                    开启“我的研究”快速找回您分析过的对局。点击即可立即开启棋盘。
+                </p>
+                <ul class="feature-bullets">
+                    <li>按级别、棋手、开局 (ECO)、赛事过滤</li>
+                    <li>开局主题筛选 — 西西里、鲁伊洛佩兹、后翼弃兵等</li>
+                    <li>行业标准 PGN 格式 — 不会被私有格式锁定</li>
+                    <li>无限制容量 — 您导入多少，它就能存多少</li>
+                </ul>
+            </div>
+            <div class="screenshot-carousel" data-carousel>
+                <div class="carousel-viewport">
+                    <div class="carousel-slide active">
+                        <div class="feature-screenshot">
+                            <img src="../screenshots/database2.png" alt="macbase 数据库筛选" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="feature-screenshot">
+                            <img src="../screenshots/database.png" alt="macbase 对局列表" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" data-index="0" aria-label="Screenshot 1"></button>
+                    <button class="carousel-dot" data-index="1" aria-label="Screenshot 2"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. ANALYSIS -->
+        <div class="feature-block">
+            <div class="feature-text">
+                <div class="feature-number">03</div>
+                <h2>深度分析分析棋盘</h2>
+                <p class="feature-highlight">像大师一样进行标注。</p>
+                <p>
+                    完整的 Stockfish 引擎分析，支持 Top 3 选点及评估条。
+                    在棋盘上绘制 <strong style="color:#a3e635">绿色箭头</strong>、
+                    <strong style="color:#f472b6">粉色箭头</strong> 和
+                    <strong style="color:#fbbf24">黄色圆圈</strong>。
+                    为任何位置添加文本注释 — 它们会嵌入标准 PGN 中，方便随时导出。
+                </p>
+                <ul class="feature-bullets">
+                    <li>Stockfish 引擎 — Top 3 变着与分值评估</li>
+                    <li>绘制箭头与高亮方格 (右键 / Shift+点击)</li>
+                    <li>内置文本标注</li>
+                    <li>导出带标注的 PGN — 分析结果始终可携带</li>
+                    <li>保存至开局库或剪辑为闪存卡</li>
+                </ul>
+            </div>
+            <div class="screenshot-carousel" data-carousel>
+                <div class="carousel-viewport">
+                    <div class="carousel-slide active">
+                        <div class="feature-screenshot">
+                            <img src="../screenshots/analysis2.png" alt="macbase 棋盘标注" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="feature-screenshot">
+                            <img src="../screenshots/analysis1.png" alt="macbase 引擎分析" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" data-index="0" aria-label="Screenshot 1"></button>
+                    <button class="carousel-dot" data-index="1" aria-label="Screenshot 2"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. REPERTOIRE & FLASHCARDS -->
+        <div class="feature-block reverse">
+            <div class="feature-text">
+                <div class="feature-number">04</div>
+                <h2>开局库与闪存卡</h2>
+                <p class="feature-highlight">构建您的开局备赛系统。</p>
+                <p>
+                    将分析过的对局整理到自定义文件夹中。
+                    发现关键局面？<strong>将其剪辑为闪存卡</strong> —
+                    该位置将连同您的箭头、标注和标签一起保存。
+                    稍后回顾您的闪存卡集合，针对性练习关键变着。
+                </p>
+                <ul class="feature-bullets">
+                    <li>自定义文件夹 — 按开局、对手或主题分类</li>
+                    <li>闪存卡剪辑 — 保存带标注的特定位置</li>
+                    <li>每个保存位置都有迷你缩略图预览</li>
+                    <li>一键导入/导出文件夹 — 数据自由掌控</li>
+                </ul>
+            </div>
+            <div class="screenshot-carousel" data-carousel>
+                <div class="carousel-viewport">
+                    <div class="carousel-slide active">
+                        <div class="feature-screenshot">
+                            <img src="../screenshots/repertoire2.png" alt="macbase 闪存卡" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="feature-screenshot">
+                            <img src="../screenshots/repertoire1.png" alt="macbase 文件夹管理" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" data-index="0" aria-label="Screenshot 1"></button>
+                    <button class="carousel-dot" data-index="1" aria-label="Screenshot 2"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. INSIGHTS -->
+        <div class="feature-block">
+            <div class="feature-text">
+                <div class="feature-number">05</div>
+                <h2>线下比赛备赛</h2>
+                <p class="feature-highlight">了解当前等级分的开局趋势。</p>
+                <p>
+                    Lichess 和 Chess.com 都没有真正的 <strong>FIDE 线下赛对局库</strong>，
+                    但 macbase 有。查看当前等级分范围内胜率最高的开局。
+                    通过最新的 TWIC 期号追踪开局流行度趋势。
+                </p>
+                <ul class="feature-bullets">
+                    <li>按等级分查看胜率 — 过滤 1700-2000, 2000-2200, 2200-2500, 2500+</li>
+                    <li>黑白双方的最佳开局见解</li>
+                    <li>流行趋势 — 哪些开局正在兴起</li>
+                    <li>数据基于真实 FIDE OTB 比赛，而非线上积分</li>
+                </ul>
+            </div>
+            <div class="screenshot-carousel" data-carousel>
+                <div class="carousel-viewport">
+                    <div class="carousel-slide active">
+                        <div class="feature-screenshot">
+                            <img src="../screenshots/insight1.png" alt="macbase 开局见解" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" data-index="0" aria-label="Screenshot 1"></button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- TWIC Section -->
+    <section class="twic-section">
+        <div class="twic-inner">
+            <div class="twic-content">
+                <div class="section-badge">为什么选择 TWIC？</div>
+                <h2>免费数据库，每周更新。<br><span class="text-neon">无需任何订阅费用。</span></h2>
+                <p>
+                    ChessBase 的私有格式数据库每年收费高达 <strong>$199+</strong>。
+                    macbase 使用 <a href="https://theweekinchess.com/" target="_blank" class="twic-link">The Week in Chess
+                        (TWIC)</a> —
+                    全球最全面的免费对局库。自 1994 年以来，每周都会增加数千场真实的 FIDE 线下对局。
+                </p>
+                <ul class="twic-list">
+                    <li>📦 <strong>无限增长</strong> — 随心所欲导入后期期刊，存储在您的 Mac 上</li>
+                    <li>🏆 <strong>真实对局</strong> — 来自全球 FIDE 赛事，而非网棋</li>
+                    <li>📄 <strong>标准 PGN</strong> — 无供应商锁定，无私有文件限制</li>
+                    <li>🆓 <strong>完全免费</strong> — 无订阅、无内购、无“高级版”陷阱</li>
+                    <li>⚡ <strong>一键导入</strong> — 直接在 macbase 中下载并同步对局</li>
+                </ul>
+                <div class="twic-donate">
+                    <p>TWIC 自 1994 年以来一直为国际象棋社区提供免费数据。如果 macbase 对您有帮助，请考虑支持他们：</p>
+                    <a href="https://theweekinchess.com/twic" target="_blank" class="btn-twic-donate">
+                        ♟️ 支持 TWIC
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 对比 -->
+    <section class="compare" id="compare">
+        <div class="section-header">
+            <div class="section-badge">产品对比</div>
+            <h2>macbase 对比 <span class="text-neon">其它工具</span></h2>
+        </div>
+
+        <div class="compare-table-wrapper">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>功能</th>
+                        <th class="highlight">macbase</th>
+                        <th>ChessBase</th>
+                        <th>Lichess</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>价格</td>
+                        <td class="highlight"><span class="badge-free">一次性</span></td>
+                        <td>$199+/年 (订阅制)</td>
+                        <td>免费</td>
+                    </tr>
+                    <tr>
+                        <td>Mac 原生支持</td>
+                        <td class="highlight">✅ 原生支持</td>
+                        <td>❌ 仅 Windows</td>
+                        <td>✅ 浏览器</td>
+                    </tr>
+                    <tr>
+                        <td>数据库格式</td>
+                        <td class="highlight">✅ 开源 PGN</td>
+                        <td>❌ 私有 .cbv</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>数据更新</td>
+                        <td class="highlight">✅ 免费 (TWIC 每周)</td>
+                        <td>❌ 每年付费</td>
+                        <td>⚠️ 仅线上</td>
+                    </tr>
+                    <tr>
+                        <td>线下 OTB 对局</td>
+                        <td class="highlight">✅ 完整 TWIC 归档</td>
+                        <td>✅</td>
+                        <td>❌ 仅限网棋</td>
+                    </tr>
+                    <tr>
+                        <td>本地优先</td>
+                        <td class="highlight">✅ SQLite 本地存储</td>
+                        <td>✅</td>
+                        <td>❌ 云端</td>
+                    </tr>
+                    <tr>
+                        <td>闪存卡系统</td>
+                        <td class="highlight">✅ 剪辑与练习</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>开源项目</td>
+                        <td class="highlight">✅ MIT 协议</td>
+                        <td>❌</td>
+                        <td>✅ AGPL</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>准备好提升您的棋艺了吗？</h2>
+            <p>下载 macbase，在您的 Mac 上开始研究真实的对局。<br>开源项目，无限扩展的数据库。
+                <strong>前 100 名用户免费领取。</strong>
+            </p>
+            <a href="https://tally.so/r/QKDjA1" class="btn-primary large" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                下载 Mac 版
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <span class="logo-icon">♞</span>
+                <span>mac<span class="text-neon">base</span></span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/joe-ging/macbase" target="_blank">GitHub</a>
+                <a href="https://github.com/joe-ging/macbase/issues" target="_blank">报告问题</a>
+                <a href="https://github.com/joe-ging/macbase/releases" target="_blank">发布版本</a>
+                <a href="https://theweekinchess.com/twic" target="_blank" class="twic-footer-link">♟️ 支持 TWIC</a>
+            </div>
+            <div class="footer-copy">
+                Built with ♟️ by <a href="https://github.com/joe-ging" target="_blank">joe-ging</a> · 2026
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('[data-carousel]').forEach(carousel => {
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const dots = carousel.querySelectorAll('.carousel-dot');
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const idx = parseInt(dot.dataset.index);
+                    slides.forEach(s => s.classList.remove('active'));
+                    dots.forEach(d => d.classList.remove('active'));
+                    slides[idx].classList.add('active');
+                    dots[idx].classList.add('active');
+                });
+            });
+        });
+
+        // Fetch download count from GitHub API with cache buster
+        async function fetchDownloadCount() {
+            try {
+                const response = await fetch(`https://api.github.com/repos/joe-ging/macbase/releases?t=${Date.now()}`);
+                if (!response.ok) return;
+
+                const releases = await response.json();
+                let totalDownloads = 0;
+
+                releases.forEach(release => {
+                    release.assets.forEach(asset => {
+                        totalDownloads += asset.download_count;
+                    });
+                });
+
+                const counterEl = document.getElementById('download-counter');
+                const countNumberEl = document.getElementById('download-count-number');
+
+                if (counterEl && countNumberEl) {
+                    countNumberEl.textContent = totalDownloads;
+                    counterEl.style.display = 'block';
+                }
+            } catch (error) {
+                console.error("Could not fetch download count:", error);
+            }
+        }
+
+        fetchDownloadCount();
+    </script>
+</body>
+
+</html>
