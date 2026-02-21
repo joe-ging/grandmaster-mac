@@ -60,4 +60,7 @@ app = BUNDLE(
     name='macbase.app',
     icon='macbase.icns',
     bundle_identifier='com.joging.macbase',
+    info_plist={
+        'LSUIElement': False
+    }
 )

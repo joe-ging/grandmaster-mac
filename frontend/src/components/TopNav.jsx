@@ -38,19 +38,16 @@ const TopNav = () => {
                     gap: '10px',
                     textDecoration: 'none',
                 }}>
-                    <div style={{
-                        width: '36px',
-                        height: '36px',
-                        background: 'rgba(204, 255, 0, 0.05)',
-                        border: '1px solid var(--neon-lime)',
-                        borderRadius: '8px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        boxShadow: '0 0 15px var(--neon-lime-glow)',
-                    }}>
-                        <span style={{ fontSize: '20px' }}>♞</span>
-                    </div>
+                    <img
+                        src="/macbase_icon.png"
+                        alt="Macbase Logo"
+                        style={{
+                            width: '36px',
+                            height: '36px',
+                            borderRadius: '8px',
+                            boxShadow: '0 0 15px var(--neon-lime-glow)',
+                        }}
+                    />
                     <span style={{
                         fontSize: '21px',
                         fontWeight: '500',
