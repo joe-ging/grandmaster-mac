@@ -1139,10 +1139,25 @@ if __name__ == "__main__":
     import threading
     import webbrowser
     import time
+    import socket
+    import sys
+
+    # Check if we are already running on port 8000
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        in_use = s.connect_ex(('127.0.0.1', 8000)) == 0
+    
+    if in_use:
+        # App is already running in the background. Open browser and exit to prevent dual-bind crash.
+        webbrowser.open("http://localhost:8000")
+        sys.exit(0)
     
     def open_browser():
         time.sleep(2)
         webbrowser.open("http://localhost:8000")
         
     threading.Thread(target=open_browser, daemon=True).start()
-    uvicorn.run(app, host="localhost", port=8000)
+    
+    try:
+        uvicorn.run(app, host="127.0.0.1", port=8000)
+    except Exception as e:
+        print(f"Server error: {e}")
