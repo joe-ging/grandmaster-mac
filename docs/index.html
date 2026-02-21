@@ -527,14 +527,13 @@
                     });
                 });
 
-                if (totalDownloads > 0) {
-                    const counterEl = document.getElementById('download-counter');
-                    const countNumberEl = document.getElementById('download-count-number');
+                // Always show the counter so people know they are the first!
+                const counterEl = document.getElementById('download-counter');
+                const countNumberEl = document.getElementById('download-count-number');
 
-                    if (counterEl && countNumberEl) {
-                        countNumberEl.textContent = totalDownloads;
-                        counterEl.style.display = 'block';
-                    }
+                if (counterEl && countNumberEl) {
+                    countNumberEl.textContent = totalDownloads;
+                    counterEl.style.display = 'block';
                 }
             } catch (error) {
                 console.error("Could not fetch download count:", error);
