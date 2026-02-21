@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download macbase — Chess Analysis for Mac</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .download-hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .success-icon {
+            font-size: 64px;
+            margin-bottom: 24px;
+            animation: bounce-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .download-btn-container {
+            margin: 40px 0;
+            padding: 32px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .install-guide {
+            max-width: 600px;
+            text-align: left;
+            margin-top: 60px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 32px;
+            border-radius: 20px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .install-guide h3 {
+            color: var(--neon-lime);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: var(--neon-lime);
+            color: #000;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .step-text strong {
+            color: var(--text-primary);
+        }
+
+        .help-link {
+            margin-top: 24px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .help-link a {
+            color: var(--neon-lime);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">♞</span>
+                <span class="logo-text">mac<span class="text-neon">base</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="https://github.com/joe-ging/macbase" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="download-hero">
+        <div class="success-icon">🎉</div>
+        <h1 class="hero-title">Thanks for joining <span class="text-neon">macbase</span>!</h1>
+        <p class="hero-subtitle">You are one of our first 100 users. Your download is ready.</p>
+
+        <div class="download-btn-container">
+            <p style="margin-bottom: 24px; font-weight: 500;">Your download should start automatically.</p>
+            <a href="https://github.com/joe-ging/macbase/releases/latest/download/macbase.dmg" class="btn-primary large"
+                id="direct-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Click here to download
+            </a>
+            <p style="margin-top: 24px; font-size: 13px; color: var(--text-muted);">
+                macbase.dmg (Universal: Intel & Apple Silicon)
+            </p>
+        </div>
+
+        <div class="install-guide">
+            <h3>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                </svg>
+                Installation Guide (Important)
+            </h3>
+            <p style="font-size: 14px; margin-bottom: 20px; color: var(--text-muted);">
+                Because macbase is an open-source tool, you need to follow these two steps to open it for the first
+                time:
+            </p>
+            <div class="step-list">
+                <div class="step-item">
+                    <span class="step-number">1</span>
+                    <p class="step-text">Drag <strong>macbase</strong> to your Applications folder.</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-number">2</span>
+                    <p class="step-text"><strong>Right-click</strong> the app and select <strong>Open</strong>. (Do not
+                        just double-click; macOS needs a right-click to verify the first launch).</p>
+                </div>
+            </div>
+            <div class="help-link">
+                Need help? <a href="https://github.com/joe-ging/macbase/issues" target="_blank">Open an issue on
+                    GitHub</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <span class="logo-icon">♞</span>
+                <span>mac<span class="text-neon">base</span></span>
+            </div>
+            <div class="footer-copy">
+                Built for the chess community · 2026
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Start download automatically on load
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById('direct-link').click();
+            }, 1000);
+        };
+    </script>
+</body>
+
+</html>
