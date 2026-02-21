@@ -406,9 +406,6 @@ body {
     height: auto;
     display: block;
     background: var(--bg-surface);
-    max-height: 400px;
-    object-fit: cover;
-    object-position: top left;
 }
 
 /* ===== TWIC SECTION ===== */
