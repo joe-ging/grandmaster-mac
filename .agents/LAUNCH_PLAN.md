@@ -191,12 +191,12 @@ DAY 2 — Sat Feb 22 (4 hrs) 🔧 IN PROGRESS
 │ ✅ Add TWIC database positioning + donation link    │
 │ ✅ Feature-by-feature walkthrough layout            │
 │ ✅ Update pricing: free for first 100 users         │
-│ 🔧 Take 5 real app screenshots                     │
+│ ✅ Take full app screenshots (carousel design)      │
+│ ✅ Add screenshots to landing page                  │
 │ 🔧 Set up Google Form (email gate for downloads)   │
 │    - Collect: name, email, chess rating (optional)  │
 │    - On submit: redirect to GitHub Releases         │
 │    - Track download count in Google Sheet           │
-│ ⬜ Add screenshots to landing page                  │
 │ ⬜ Package unsigned DMG + test install              │
 │                                                     │
 │ Result: Downloadable app + landing page + email list│
