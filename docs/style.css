@@ -154,7 +154,30 @@ body {
     font-size: 18px;
     color: var(--text-secondary);
     line-height: 1.8;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
+}
+
+.hero-pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 32px;
+}
+
+.pricing-tag {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--neon-lime);
+    background: var(--neon-lime-muted);
+    border: 1px solid rgba(163, 230, 53, 0.25);
+    padding: 8px 24px;
+    border-radius: 10px;
+}
+
+.pricing-detail {
+    font-size: 13px;
+    color: var(--text-muted);
 }
 
 .twic-link {
@@ -236,7 +259,7 @@ body {
 
 .feature-block {
     display: grid;
-    grid-template-columns: 1fr 1.4fr;
+    grid-template-columns: 1fr 1fr;
     gap: 48px;
     align-items: center;
     padding: 80px 0;
@@ -244,7 +267,7 @@ body {
 }
 
 .feature-block.reverse {
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .feature-block.reverse .feature-text {
@@ -334,8 +357,9 @@ body {
     height: auto;
     display: block;
     background: var(--bg-surface);
-    /* Min height to show something before images load */
-    min-height: 200px;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: top left;
 }
 
 /* ===== TWIC SECTION ===== */
