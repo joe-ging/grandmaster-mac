@@ -1,9 +1,9 @@
 # 🚀 Product Launch Plan
 
 > **Working Name:** macbase
-> **Status:** Pre-Launch Planning
+> **Status:** Day 2 In Progress
 > **Created:** Feb 21, 2026
-> **Last Updated:** Feb 21, 2026
+> **Last Updated:** Feb 21, 2026 (11:24 PM HKT)
 > **Target Platforms:** Multi-channel (see Launch Venues below)
 
 ---
@@ -12,11 +12,17 @@
 
 **Working Name:** `macbase` (styled lowercase like macOS)
 
-**Positioning:** Free/low-cost ChessBase alternative, built natively for Mac, local-first.
+**Positioning:** Low-cost ChessBase alternative, built natively for Mac, local-first.
+
+**Pricing:** Free for first 100 users → one-time purchase after that (no subscriptions).
 
 **Logo concept:** ♞ macbase — chess knight icon, "mac" in white, "base" in neon lime
 
-**Status:** ✅ Code rebranded from "Grandmaster Mac" → "macbase" (Feb 21, 2026)
+**Status:**
+- ✅ Code rebranded from "Grandmaster Mac" → "macbase" (Feb 21)
+- ✅ GitHub repo renamed: `github.com/joe-ging/macbase` (Feb 21)
+- ✅ `jl-intelligence-parser` repo set to PRIVATE (API key exposure) (Feb 21)
+- ✅ `joe-ging.github.io` now redirects to macbase landing page (Feb 21)
 
 **⚠️ TODO: Finalize name before launch. Verify domain availability (macbase.app, macbase.dev, etc.)**
 
@@ -59,18 +65,23 @@ Product Hunt alone won't make or break this. As a first-time PH maker with no au
 
 ### Tagline candidates (≤60 chars)
 
-- "Free chess analysis for Mac. No subscription. Ever."
-- "Your chess studio. Local. Mac-native. Free."
+- "Chess analysis for Mac. One-time purchase. Done."
+- "Your chess studio. Local. Mac-native."
 - "The ChessBase Mac users have been waiting for."
 
 ### Pre-launch checklist
 
-- [x] ~~Pick working product name~~ → **macbase**
-- [x] ~~Remove Settings page / unnecessary features~~ → Done
-- [x] ~~Rebrand all code references~~ → Done
-- [ ] Build landing page (single page, stunning design)
+- [x] Pick working product name → **macbase**
+- [x] Remove Settings page / unnecessary features
+- [x] Rebrand all code references
+- [x] Rename GitHub repo to `macbase`
+- [x] Build landing page (GitHub Pages: `joe-ging.github.io/macbase`)
+- [x] Set up pricing messaging (free for first 100, one-time purchase after)
+- [x] Add TWIC donation link to landing page
+- [ ] Set up Google Form for email collection + download gating
+- [ ] Take 5 real screenshots (Dashboard, Analysis, Database, Repertoire, Insights)
+- [ ] Add screenshots to landing page
 - [ ] Create 60-second demo video
-- [ ] Prepare 5 screenshots (Dashboard, Analysis, Database, Repertoire, Insights)
 - [ ] Write maker comment / founder story for PH + HN
 - [ ] Write tagline (≤60 characters)
 - [ ] Package unsigned DMG
@@ -85,7 +96,7 @@ Product Hunt alone won't make or break this. As a first-time PH maker with no au
 ### Your 3 Selling Points (validated by Margot)
 
 1. **Built for Mac** — ChessBase is Windows-only. Mac users currently use Wine/Parallels or inferior web tools. No native Mac chess analysis app exists at this quality level.
-2. **One-time cost** — ChessBase charges €199-499 for software + €50/year for Premium + €230 for Mega Database. That's €300-700+ to get started. We charge $0 (free) or $29 (one-time).
+2. **One-time cost** — ChessBase charges €199-499 for software + €50/year for Premium + €230 for Mega Database. That's €300-700+ to get started. We charge a one-time fee (free for first 100 users).
 3. **Local-first** — All analysis, PGNs, and repertoires stored on the user's Mac. No cloud dependency. No account needed. Their data is their data.
 
 ### Competitive Pricing Landscape
@@ -98,22 +109,22 @@ Product Hunt alone won't make or break this. As a first-time PH maker with no au
 | En Croissant | Free | Cross-platform | Open source |
 | HIARCS | $49.99 | Mac | One-time |
 | Scid vs. PC | Free | Cross-platform | Open source |
-| **Us (Free tier)** | **$0** | **Mac** | **Free** |
-| **Us (Pro tier)** | **$29 one-time** | **Mac** | **One-time purchase** |
+| **macbase (launch)** | **$0** | **Mac** | **Free for first 100 users** |
+| **macbase (after 100)** | **TBD** | **Mac** | **One-time purchase** |
 
-### Phase 1: Validation (Product Hunt Launch)
+### Phase 1: Validation (Launch)
 
-**Goal:** Validate demand. Get 200+ downloads. Collect feedback.
+**Goal:** Validate demand. Get 100 downloads. Collect emails. Gather feedback.
 
-- **Price:** 100% free, unsigned DMG
+- **Price:** Free for first 100 users (gated via Google Form)
 - **All features unlocked** — no gating yet
-- **Distribution:** GitHub Releases + landing page
+- **Distribution:** Google Form (email) → GitHub Releases (download)
 - **Duration:** 4-8 weeks post-launch
 - **Success metrics:**
-  - 200+ downloads
-  - 50+ daily active users (tracked via opt-in anonymous analytics)
+  - 100 downloads (free tier exhausted)
+  - 50+ email signups
   - 20+ pieces of feedback
-  - Featured on Product Hunt (#1-5 of the day)
+  - Featured on Product Hunt or front page HN
 
 ### Phase 2: Polish + Sign ($99 Apple Dev)
 
@@ -125,31 +136,21 @@ Product Hunt alone won't make or break this. As a first-time PH maker with no au
 - Add optional anonymous usage analytics (PostHog free tier)
 - Fix top 5 feedback issues from Phase 1
 
-### Phase 3: Monetize (Pro tier)
+### Phase 3: Monetize (One-Time Purchase)
 
-**Trigger:** 500+ downloads, clear demand for advanced features.
+**Trigger:** 100 free downloads exhausted, clear demand.
 
-- **Free tier** (stays forever):
-  - Stockfish analysis (depth ≤ 18)
-  - Import up to 100 games
-  - 1 repertoire folder
-  - Basic opening recognition
-  - Dashboard
-
-- **Pro tier** ($29 one-time):
-  - Unlimited analysis depth (up to 30)
-  - Unlimited game imports + TWIC auto-sync
-  - Unlimited repertoire folders + flashcard training
-  - Advanced insights (opening trends, win rate by ECO)
-  - Priority support
-  - Future pro features included forever
-
-- **Payment:** Gumroad or LemonSqueezy (handles payment, delivers license key)
+- **Price:** One-time purchase (TBD — $29-49 range)
+- **Payment:** Choose own payment processor (NOT Gumroad — avoid 10% cut)
+  - Options: Stripe Checkout, Paddle, LemonSqueezy, Ko-fi
+  - Decision deferred to post-validation
 - **License activation:** Simple key check on app launch, stored locally
+- All features included — no free/pro split initially
 
 ### Phase 4: Growth (optional, if traction continues)
 
 - Mac App Store listing ($99/year already paid)
+- Free/Pro tier split (if user base warrants it)
 - Database marketplace (users share/sell opening databases)
 - Cloud sync (optional, paid add-on for backup)
 - Multi-engine support (Leela Chess Zero)
@@ -167,29 +168,44 @@ Product Hunt alone won't make or break this. As a first-time PH maker with no au
 ### 5-Day Sprint Plan
 
 ```
-DAY 1 — Fri Feb 21 (4 hrs) ✅ DONE
+DAY 1 — Fri Feb 21 (4 hrs) ✅ COMPLETE
 ┌─────────────────────────────────────────────────────┐
-│ ✅ Rebrand to macbase                               │
+│ ✅ Rebrand to macbase (code + GitHub repo)          │
 │ ✅ Remove Settings page + unnecessary features      │
 │ ✅ Create launch plan                               │
 │ ✅ Define business model + launch channels          │
+│ ✅ Fix Dashboard TWIC timeout bug                   │
+│ ✅ Fix duplicate max_elo filter bug                 │
+│ ✅ Delete dead Settings.jsx file                    │
+│ ✅ Set up GitHub Pages hosting                      │
+│ ✅ Redirect joe-ging.github.io → /macbase           │
+│ ✅ Make jl-intelligence-parser repo private          │
+│ ✅ Push all changes to GitHub                       │
 │                                                     │
-│ Result: App is clean, branded, plan is clear        │
+│ Result: App clean, branded, bugs fixed, plan clear  │
 └─────────────────────────────────────────────────────┘
 
-DAY 2 — Sat Feb 22 (4 hrs)
+DAY 2 — Sat Feb 22 (4 hrs) 🔧 IN PROGRESS
 ┌─────────────────────────────────────────────────────┐
-│ Hour 1:   Fix 4 dashboard bugs                      │
-│ Hour 2-3: Build landing page (1 page, good enough)  │
-│ Hour 4:   Package unsigned DMG + test install        │
+│ ✅ Build landing page v1 (hero, features, compare)  │
+│ ✅ Add TWIC database positioning + donation link    │
+│ ✅ Feature-by-feature walkthrough layout            │
+│ ✅ Update pricing: free for first 100 users         │
+│ 🔧 Take 5 real app screenshots                     │
+│ 🔧 Set up Google Form (email gate for downloads)   │
+│    - Collect: name, email, chess rating (optional)  │
+│    - On submit: redirect to GitHub Releases         │
+│    - Track download count in Google Sheet           │
+│ ⬜ Add screenshots to landing page                  │
+│ ⬜ Package unsigned DMG + test install              │
 │                                                     │
-│ Result: Downloadable app + landing page live         │
+│ Result: Downloadable app + landing page + email list│
 └─────────────────────────────────────────────────────┘
 
 DAY 3 — Sun Feb 23 (4 hrs)
 ┌─────────────────────────────────────────────────────┐
-│ Hour 1:   Create GitHub repo + README w/ screenshots│
-│ Hour 2:   Take 5 screenshots of the app             │
+│ Hour 1:   Polish GitHub README w/ screenshots       │
+│ Hour 2:   Take remaining screenshots if needed      │
 │ Hour 3:   Write HN post + PH listing + IH post      │
 │ Hour 4:   Write maker story (your "why")            │
 │                                                     │
@@ -234,10 +250,10 @@ DAYS 6-10 — FEEDBACK SPRINT
 | Skip This | Why |
 |---|---|
 | Demo video | Screenshots are enough. Do it post-launch if traction. |
-| Perfect landing page | Good-enough with download button > perfect in 2 weeks. |
-| Custom domain | Use GitHub URL or free Vercel URL. Buy domain only if traction. |
+| Custom domain | Use GitHub Pages URL. Buy domain only if traction. |
 | Hype list | You don't have one. Ship now, build audience after. |
 | PH hunter | Hunt it yourself. Authentic > manufactured. |
+| Gumroad | Avoid 10% cut. Google Form + Stripe later gives full control. |
 
 ### Fail-Fast Decision Framework (Day 10)
 
@@ -270,82 +286,95 @@ DAYS 6-10 — FEEDBACK SPRINT
 
 ### Cut from v1 → move to v2
 
-- ❌ Settings page → **simplify or remove entirely**
-  - Analysis depth slider → hardcode to 20 for now
-  - Multi-PV selector → hardcode to 3
-  - Lichess/Chess.com profile import → v2 feature
-  - External Sync tab → v2
-  - Training Logic tab → v2
+- ❌ Settings page → **removed**
+- ❌ Lichess/Chess.com profile import → v2
+- ❌ External Sync → v2
+- ❌ Training Logic tab → v2
 - ❌ Profile/account system (not needed for local-first)
 
 ### v1 polish (test before launch, fix if broken)
 
+- [x] Fix Dashboard TWIC fetch timeout (added 10s AbortController)
+- [x] Fix duplicate max_elo filter in Database page
+- [x] Delete dead Settings.jsx file
 - [ ] Verify all pages load without errors
 - [ ] Test PGN import flow end-to-end
 - [ ] Test Analysis page with a loaded game
 
 ---
 
-## 5. Immediate Action Items
+## 5. Download Gating & Email Collection
 
-### ✅ DONE
+### Approach: Google Form → GitHub Releases
 
-| # | Task | Status |
-|---|---|---|
-| 1 | Pick working product name → **macbase** | ✅ Done |
-| 2 | Rebrand all code (frontend + backend) | ✅ Done |
-| 3 | Remove Settings page + Lichess/Chess.com integration | ✅ Done |
+**Why not Gumroad:** Avoid 10% cut, retain control over payment options for future.
 
-### 🔴 Do NOW (this week)
+**Flow:**
+```
+Landing Page "Download" button
+  → Google Form (collects email, name, optional chess rating)
+    → Form confirmation page with GitHub Releases link
+      → User downloads DMG from GitHub Releases
+```
 
-| # | Task | Owner | Est. Time |
-|---|---|---|---|
-| 4 | **Build landing page** | Antigravity | 2-3 hours |
-| 5 | **Package unsigned DMG** (shell-script .app wrapper) | Antigravity | 3-4 hours |
-| 6 | **Verify domain availability** (macbase.app, etc.) | Margot | 30 min |
+**What this gives us:**
+1. **Email list** — Google Sheet auto-collects all form responses
+2. **Download count** — count rows in sheet = download count
+3. **User demographics** — optional chess rating shows who our users are
+4. **Manual limit enforcement** — after 100 entries, update form to say "free period ended"
+5. **No vendor lock-in** — can switch to Stripe/Paddle/Ko-fi later
 
-### 🟡 Do NEXT (before launch)
+**Google Form fields:**
+- Email (required)
+- Name (optional)
+- Chess rating / platform (optional, e.g. "1800 Lichess" or "1650 FIDE")
+- How did you find macbase? (optional dropdown: HN, PH, Reddit, Twitter, Friend, Other)
 
-| # | Task | Owner | Est. Time |
-|---|---|---|---|
-| 8 | Create 60-second demo video | Margot | 2 hours |
-| 9 | Take 5 polished screenshots | Margot + Antigravity | 1 hour |
-| 10 | Write tagline + maker story for PH + HN posts | Margot | 1 hour |
-| 11 | Create GitHub repo + polished README | Antigravity | 1 hour |
-| 12 | Draft posts for each launch venue | Margot | 2 hours |
-| 13 | Start commenting on r/chess for karma | Margot | Ongoing |
+**After 100 downloads:**
+- Update Google Form to show "Free period has ended"
+- Add payment link (Stripe Checkout or similar) before download
+- Keep GitHub Releases public (it's open source) but gate the DMG
 
-### 🟢 Do LATER (post-launch)
-
-| # | Task | Notes |
-|---|---|---|
-| 14 | Evaluate Phase 1 metrics | 4-8 weeks post-launch |
-| 15 | Sign app ($99 Apple Dev) | Only if Phase 1 succeeds |
-| 16 | Implement free/pro tier gating | Only if Phase 2 triggered |
-| 17 | Backend refactoring (split main.py) | Engineering health |
-| 18 | Expand test coverage to 50+ | Engineering health |
+### TODO
+- [ ] Create Google Form with fields above
+- [ ] Create Google Sheet for responses
+- [ ] Wire up landing page "Download" button → Google Form
+- [ ] Set up email notification when new form response received
 
 ---
 
 ## 6. Distribution Architecture
 
 ```
-Landing Page (Vercel, free)
-├── macbase.app (or similar)
-├── Hero section + screenshots + video
-├── "Download for Mac" button → GitHub Releases
+Landing Page (GitHub Pages, free)
+├── joe-ging.github.io/macbase
+├── Hero section + real app screenshots
+├── Feature-by-feature walkthrough
+├── TWIC database section + donation link
 ├── Feature comparison vs ChessBase
-└── Pricing (Free now, Pro coming soon)
+├── Pricing: "Free for first 100 users"
+├── "Download for Mac" button → Google Form
+└── Footer with GitHub + TWIC links
+
+Portfolio Hub (GitHub Pages, future)
+├── joe-ging.github.io (redirects to /macbase for now)
+├── Future: developer portfolio + project showcase
+└── See PORTFOLIO_TODO.md in joe-ging.github.io repo
+
+Google Form (email gate)
+├── Collects: email, name, rating, referral source
+├── On submit: redirects to GitHub Releases
+└── Responses in Google Sheet (download count + email list)
 
 GitHub (free — open core model)
-├── Source code (MIT/GPL for core, closed for Pro features)
+├── Source code (MIT for core)
 ├── Releases → macbase-v1.0.0.dmg
 ├── README with screenshots + install instructions
 ├── CONTRIBUTING.md for community
 └── Submit to Awesome Mac + Awesome Chess lists
 
 Launch Day Posts (all platforms simultaneously)
-├── Hacker News: "Show HN: macbase – Free ChessBase for Mac"
+├── Hacker News: "Show HN: macbase – ChessBase alternative for Mac"
 ├── Product Hunt: Full listing with screenshots + video
 ├── Indie Hackers: "I launched macbase" builder post
 ├── r/SideProject + r/macapps: Screenshot posts
@@ -364,6 +393,8 @@ Launch Day Posts (all platforms simultaneously)
 | Low PH traction | Cross-post to r/chess (900K members), r/macapps, chess forums |
 | Stockfish WASM performance | Document that native Stockfish (v2, signed app) will be faster |
 | Name already taken | Check trademark + domain availability before committing |
+| Google Form feels unprofessional | Keep it simple and branded; swap to Stripe Checkout in Phase 2 |
+| Free users don't convert to paid | Focus on proving demand first; monetization is Phase 3 |
 
 ---
 
