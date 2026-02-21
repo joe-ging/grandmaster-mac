@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>macbase — Free Chess Analysis for Mac</title>
     <meta name="description"
-        content="The ChessBase alternative Mac users have been waiting for. Local-first, Stockfish-powered, totally free. Analyze games, build repertoires, study openings.">
-    <meta name="keywords" content="chess, mac, chessbase, analysis, stockfish, opening, repertoire, pgn, free">
+        content="The ChessBase alternative Mac users have been waiting for. Powered by TWIC's free weekly game database. Local-first, Stockfish-powered, totally free.">
+    <meta name="keywords"
+        content="chess, mac, chessbase, analysis, stockfish, opening, repertoire, pgn, free, TWIC, OTB, FIDE">
     <meta property="og:title" content="macbase — Free Chess Analysis for Mac">
     <meta property="og:description"
-        content="Local-first chess analysis built natively for Mac. Stockfish engine, 88K+ games database, repertoire builder.">
+        content="Free chess analysis for Mac. TWIC-powered database updated weekly. Stockfish engine, repertoire builder, opening insights by FIDE rating.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +30,8 @@
             </a>
             <div class="nav-links">
                 <a href="#features">Features</a>
+                <a href="#analysis">Analysis</a>
+                <a href="#insights">OTB Prep</a>
                 <a href="#compare">vs ChessBase</a>
                 <a href="https://github.com/joe-ging/macbase" target="_blank">GitHub</a>
                 <a href="#download" class="btn-download-nav">Download</a>
@@ -38,15 +41,17 @@
 
     <!-- Hero -->
     <section class="hero">
-        <div class="hero-badge">OPEN SOURCE · LOCAL-FIRST · FREE</div>
+        <div class="hero-badge">OPEN SOURCE · LOCAL-FIRST · FREE FOREVER</div>
         <h1 class="hero-title">
             Chess analysis<br>
             <span class="text-neon">built for Mac.</span>
         </h1>
         <p class="hero-subtitle">
             The ChessBase alternative Mac users have been waiting for.<br>
-            Stockfish engine. 88,000+ game database. Repertoire builder.<br>
-            <strong>100% local. No cloud. No subscription.</strong>
+            Powered by <a href="https://theweekinchess.com/" target="_blank" class="twic-link">TWIC</a> — the world's
+            largest free chess game database,<br>
+            updated every week with thousands of real OTB tournament games.<br>
+            <strong>No proprietary formats. No subscriptions. Just open PGN.</strong>
         </p>
         <div class="hero-cta">
             <a href="https://github.com/joe-ging/macbase/releases" class="btn-primary" id="download">
@@ -80,31 +85,52 @@
                             <span class="dot yellow"></span>
                             <span class="dot green"></span>
                         </div>
-                        <span class="mock-title">macbase</span>
+                        <span class="mock-title">macbase — Analysis</span>
                     </div>
-                    <div class="mock-content">
-                        <div class="mock-sidebar">
-                            <div class="mock-nav-item active">Dashboard</div>
-                            <div class="mock-nav-item">Database</div>
-                            <div class="mock-nav-item">Analysis</div>
-                            <div class="mock-nav-item">Repertoire</div>
-                            <div class="mock-nav-item">Insights</div>
+                    <div class="mock-content analysis-mock">
+                        <div class="mock-board-area">
+                            <div class="mock-eval-bar">
+                                <div class="mock-eval-fill" style="height: 58%"></div>
+                                <span class="mock-eval-label">+0.4</span>
+                            </div>
+                            <div class="mock-board">
+                                <div class="mock-board-grid">
+                                    <!-- Simplified board representation -->
+                                    <div class="board-label">Interactive Board</div>
+                                    <div class="mock-arrow green-arrow"></div>
+                                    <div class="mock-circle yellow-circle"></div>
+                                    <div class="mock-arrow pink-arrow"></div>
+                                </div>
+                                <div class="mock-board-controls">
+                                    <span>Right-Click <span class="text-neon">Green</span></span>
+                                    <span>Shift+Right <span style="color:#f472b6">Red</span></span>
+                                    <span>Right-Click <span style="color:#fbbf24">Circle</span></span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mock-main">
-                            <div class="mock-header">Command Center</div>
-                            <div class="mock-grid">
-                                <div class="mock-card wide">
-                                    <div class="mock-card-title">The Week in Chess</div>
-                                    <div class="mock-table-row"><span class="text-neon">1631</span><span>LATEST</span>
-                                    </div>
-                                    <div class="mock-table-row"><span>1630</span><span>7,091 games</span></div>
-                                    <div class="mock-table-row"><span>1629</span><span>6,060 games</span></div>
-                                </div>
-                                <div class="mock-card">
-                                    <div class="mock-card-title">Database Health</div>
-                                    <div class="mock-big-number">88,801</div>
-                                    <div class="mock-label">ACTIVE GAMES</div>
-                                </div>
+                        <div class="mock-analysis-panel">
+                            <div class="mock-game-header">
+                                <div>Szulics,I <span class="badge-study">MY STUDY</span> <span
+                                        class="mock-elo">1752</span></div>
+                                <div>Sojnoczki,Anna <span class="mock-elo">1776</span></div>
+                                <div class="mock-event">II Rotary Club Rapid 2026</div>
+                                <div class="mock-eco"><span class="eco-badge">D02</span> London System</div>
+                            </div>
+                            <div class="mock-engine">
+                                <div class="mock-engine-title">BRAIN ANALYSIS</div>
+                                <div class="mock-line"><span class="text-neon">+0.36</span> e5</div>
+                                <div class="mock-line"><span class="text-neon">+0.42</span> c6</div>
+                                <div class="mock-line"><span class="text-neon">+0.44</span> e6</div>
+                            </div>
+                            <div class="mock-notes">
+                                <div class="mock-notes-title">📝 STUDY NOTES</div>
+                                <div class="mock-notes-text">{so h4 probably doesn't work}</div>
+                                <div class="mock-notes-text">{here the last chance to play Bg4 the pin}</div>
+                            </div>
+                            <div class="mock-actions">
+                                <span class="mock-action-btn">💾 Save to Repertoire</span>
+                                <span class="mock-action-btn">📸 Clip as Flashcard</span>
+                                <span class="mock-action-btn">⬇ Export PGN</span>
                             </div>
                         </div>
                     </div>
@@ -113,49 +139,177 @@
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features" id="features">
+    <!-- TWIC Section -->
+    <section class="twic-section">
+        <div class="twic-inner">
+            <div class="twic-content">
+                <div class="section-badge">DATABASE</div>
+                <h2>Powered by <span class="text-neon">TWIC</span> — free, open, updated weekly.</h2>
+                <p>
+                    ChessBase charges you <strong>$199+/year</strong> for their proprietary .cbv database format.
+                    macbase uses <a href="https://theweekinchess.com/" target="_blank" class="twic-link">The Week in
+                        Chess (TWIC)</a> —
+                    the world's most comprehensive free chess game collection. Every week, thousands of real
+                    <strong>FIDE-rated OTB tournament games</strong> are added in standard PGN format.
+                </p>
+                <ul class="twic-list">
+                    <li>📦 <strong>Growing every week</strong> — not a static snapshot, a living database</li>
+                    <li>🏆 <strong>Real OTB games</strong> — from FIDE tournaments worldwide, not online blitz</li>
+                    <li>📄 <strong>Standard PGN format</strong> — no vendor lock-in, no proprietary formats</li>
+                    <li>🆓 <strong>100% free</strong> — no subscription, no paywall, no "premium" tier</li>
+                    <li>⚡ <strong>One-click import</strong> — download any TWIC issue directly in macbase</li>
+                </ul>
+                <div class="twic-donate">
+                    <p>TWIC has provided free chess games to the community since 1994. If macbase helps your chess,
+                        consider supporting them:</p>
+                    <a href="https://theweekinchess.com/twic" target="_blank" class="btn-twic-donate">
+                        ♟️ Support TWIC
+                    </a>
+                </div>
+            </div>
+            <div class="twic-visual">
+                <div class="mock-card">
+                    <div class="mock-card-title">The Week in Chess</div>
+                    <div class="mock-table-row"><span class="text-neon">1631</span><span
+                            class="badge-latest">LATEST</span><span>6,370 games</span></div>
+                    <div class="mock-table-row"><span>1630</span><span></span><span>7,091 games</span></div>
+                    <div class="mock-table-row"><span>1629</span><span></span><span>6,060 games</span></div>
+                    <div class="mock-table-row"><span>1628</span><span></span><span>6,014 games</span></div>
+                    <div class="mock-table-row"><span>1574</span><span
+                            class="badge-imported">Imported</span><span>39,228 games</span></div>
+                    <div class="twic-total">
+                        <span>Database Total</span>
+                        <span class="text-neon" style="font-size: 24px; font-weight: 800;">88,801+</span>
+                    </div>
+                    <div class="twic-growing">↑ Growing every week</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analysis Features -->
+    <section class="features analysis-features" id="analysis">
         <div class="section-header">
-            <div class="section-badge">FEATURES</div>
-            <h2>Everything you need.<br><span class="text-neon">Nothing you don't.</span></h2>
+            <div class="section-badge">DEEP ANALYSIS</div>
+            <h2>Annotate. Draw. Save.<br><span class="text-neon">Make every game a study.</span></h2>
         </div>
 
-        <div class="features-grid">
+        <div class="features-grid three-col">
             <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Stockfish Engine</h3>
-                <p>Multi-PV analysis with depth 15+. Get top 3 engine lines, evaluation bar, and cloud eval from Lichess
-                    — all running locally on your Mac.</p>
+                <div class="feature-icon">🟢</div>
+                <h3>Draw Arrows & Circles</h3>
+                <p>Right-click to draw <strong style="color:#a3e635">green arrows</strong>. Shift+click for <strong
+                        style="color:#f472b6">pink arrows</strong>. Mark key squares with <strong
+                        style="color:#fbbf24">yellow circles</strong>. All annotations are saved with your game.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>88,000+ Game Database</h3>
-                <p>Import TWIC issues automatically. Filter by player, ELO, ECO code, or event. Click any game to
-                    analyze instantly.</p>
+                <div class="feature-icon">📝</div>
+                <h3>Text Annotations in PGN</h3>
+                <p>Add inline study notes to any position: <em style="color:#a3e635">{so h4 probably doesn't work}</em>.
+                    Notes are embedded in standard PGN format — <strong>download your annotated PGN</strong> anytime.
+                </p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Stockfish Engine Lines</h3>
+                <p>Multi-PV analysis showing top 3 engine lines with evaluation bar. Cloud eval from Lichess or local
+                    Stockfish — whichever is faster. Cached for instant navigation.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📸</div>
+                <h3>Clip Positions as Flashcards</h3>
+                <p>Found a critical moment? <strong>Clip it.</strong> Save the position with your arrows, annotations,
+                    and tags as a flashcard. Review later in your repertoire. Like Anki, but for chess positions.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📖</div>
-                <h3>Repertoire Builder</h3>
-                <p>Organize games into folders. Save annotated positions as flashcards. Export/import PGN. Build your
-                    opening prep system.</p>
+                <h3>Save to Repertoire Folders</h3>
+                <p>Organize your analyzed games into custom folders. Build opening repertoires, tactical collections, or
+                    endgame studies. Import/export entire folders as PGN.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🎯</div>
-                <h3>Opening Insights</h3>
-                <p>Win rate analysis by ECO code. Popularity trends across rating ranges. Find the best lines for your
-                    level (1700-2500+).</p>
+                <div class="feature-icon">⬇️</div>
+                <h3>Download Annotated PGN</h3>
+                <p>Your full analysis — moves, comments, variations — exported as standard PGN. Open in any chess
+                    software. Your work is <strong>never locked in</strong>.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- OTB Insights -->
+    <section class="features" id="insights">
+        <div class="section-header">
+            <div class="section-badge">OTB TOURNAMENT PREP</div>
+            <h2>Know what's trending<br><span class="text-neon">at your rating level.</span></h2>
+            <p class="section-desc">
+                Neither Lichess nor Chess.com has a database of real <strong>FIDE OTB tournament games</strong>.
+                macbase does. Filter by rating range and see what openings real players play at your level.
+            </p>
+        </div>
+
+        <div class="insights-grid">
+            <div class="insight-card">
+                <div class="insight-header">
+                    <span class="insight-icon">📊</span>
+                    <h3>Opening Win Rates by ELO</h3>
+                </div>
+                <p>
+                    Playing the Sicilian Najdorf? See what win rate it has at 1700-2000 ELO vs 2200-2500.
+                    Filter by <strong>White or Black</strong>, by <strong>1.e4 or 1.d4 responses</strong>.
+                    Data from real FIDE-rated games, not online bullet.
+                </p>
+            </div>
+            <div class="insight-card">
+                <div class="insight-header">
+                    <span class="insight-icon">📈</span>
+                    <h3>Popularity Trends</h3>
+                </div>
+                <p>
+                    See which openings are trending up or down across recent TWIC issues at your rating band.
+                    Prepare for your next OTB tournament by knowing what your opponents are likely to play.
+                </p>
+            </div>
+            <div class="insight-card wide">
+                <div class="insight-header">
+                    <span class="insight-icon">🎯</span>
+                    <h3>Bridge the Online-OTB Gap</h3>
+                </div>
+                <p>
+                    You're 2000 on Lichess but have no idea what FIDE ELO that maps to?
+                    Look up the free database — compare your games to <strong>1700, 1800, 1900 FIDE-rated
+                        games</strong>.
+                    See what openings they play, what win rates look like, and how your prep stacks up —
+                    <em>before</em> you sit down at the board.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <div class="section-badge">CORE FEATURES</div>
+            <h2>Everything you need.<br><span class="text-neon">Nothing you don't.</span></h2>
+        </div>
+
+        <div class="features-grid three-col">
             <div class="feature-card">
                 <div class="feature-icon">🖥️</div>
                 <h3>Native Mac Experience</h3>
-                <p>Built with a dark, neon-accented UI designed for focus. No Electron bloat. No browser tabs. Just
-                    chess analysis.</p>
+                <p>Dark, neon-accented UI designed for focus. No Electron bloat. No browser tabs. A real desktop app
+                    that feels like it belongs on your Mac.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🔒</div>
                 <h3>100% Local & Private</h3>
-                <p>Your games, annotations, and analysis stay on your machine. No account required. No data sent
-                    anywhere. SQLite-powered.</p>
+                <p>Your games, annotations, and analysis stay on your machine. No account. No cloud. No data sent
+                    anywhere. SQLite database on your disk.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔓</div>
+                <h3>Open Source</h3>
+                <p>MIT licensed. Read the code, modify it, contribute. No vendor lock-in, no proprietary database
+                    formats. Standard PGN in, standard PGN out.</p>
             </div>
         </div>
     </section>
@@ -181,7 +335,7 @@
                     <tr>
                         <td>Price</td>
                         <td class="highlight"><span class="badge-free">Free</span></td>
-                        <td>$199+</td>
+                        <td>$199+/year</td>
                         <td>Free</td>
                     </tr>
                     <tr>
@@ -191,8 +345,26 @@
                         <td>✅ Browser</td>
                     </tr>
                     <tr>
+                        <td>Database format</td>
+                        <td class="highlight">✅ Open PGN</td>
+                        <td>❌ Proprietary .cbv</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Database updates</td>
+                        <td class="highlight">✅ Free (TWIC weekly)</td>
+                        <td>❌ Paid yearly</td>
+                        <td>⚠️ Online only</td>
+                    </tr>
+                    <tr>
+                        <td>OTB FIDE games</td>
+                        <td class="highlight">✅ Full TWIC archive</td>
+                        <td>✅</td>
+                        <td>❌ Online games only</td>
+                    </tr>
+                    <tr>
                         <td>Local-first</td>
-                        <td class="highlight">✅</td>
+                        <td class="highlight">✅ SQLite on disk</td>
                         <td>✅</td>
                         <td>❌ Cloud</td>
                     </tr>
@@ -203,28 +375,34 @@
                         <td>✅ Cloud</td>
                     </tr>
                     <tr>
-                        <td>PGN database</td>
-                        <td class="highlight">✅ SQLite</td>
-                        <td>✅ Proprietary</td>
+                        <td>Draw arrows/circles</td>
+                        <td class="highlight">✅ Green, pink, yellow</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td>Annotated PGN export</td>
+                        <td class="highlight">✅</td>
+                        <td>✅</td>
                         <td>⚠️ Limited</td>
                     </tr>
                     <tr>
-                        <td>Repertoire builder</td>
-                        <td class="highlight">✅</td>
-                        <td>✅</td>
-                        <td>✅</td>
+                        <td>Flashcard positions</td>
+                        <td class="highlight">✅ Clip & review</td>
+                        <td>❌</td>
+                        <td>❌</td>
                     </tr>
                     <tr>
-                        <td>Opening statistics</td>
-                        <td class="highlight">✅ Win rates by ELO</td>
+                        <td>Win rates by ELO</td>
+                        <td class="highlight">✅ FIDE rated</td>
                         <td>✅</td>
-                        <td>✅</td>
+                        <td>⚠️ Online ELO only</td>
                     </tr>
                     <tr>
                         <td>Open source</td>
-                        <td class="highlight">✅</td>
+                        <td class="highlight">✅ MIT</td>
                         <td>❌</td>
-                        <td>✅</td>
+                        <td>✅ AGPL</td>
                     </tr>
                 </tbody>
             </table>
@@ -235,7 +413,8 @@
     <section class="cta-section">
         <div class="cta-content">
             <h2>Ready to analyze?</h2>
-            <p>Download macbase and start studying chess on your Mac today. Free, open source, no strings attached.</p>
+            <p>Download macbase and start studying real OTB chess games on your Mac. Free, open source, no strings
+                attached.</p>
             <a href="https://github.com/joe-ging/macbase/releases" class="btn-primary large">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -259,9 +438,13 @@
                 <a href="https://github.com/joe-ging/macbase" target="_blank">GitHub</a>
                 <a href="https://github.com/joe-ging/macbase/issues" target="_blank">Report a Bug</a>
                 <a href="https://github.com/joe-ging/macbase/releases" target="_blank">Releases</a>
+                <a href="https://theweekinchess.com/twic" target="_blank" class="twic-footer-link">♟️ Support TWIC</a>
             </div>
             <div class="footer-copy">
                 Built with ♟️ by <a href="https://github.com/joe-ging" target="_blank">joe-ging</a> · 2026
+                <br><span style="font-size: 11px; color: var(--text-muted);">Game data provided by <a
+                        href="https://theweekinchess.com/" target="_blank" style="color: var(--text-secondary);">The
+                        Week in Chess</a> (TWIC) since 1994.</span>
             </div>
         </div>
     </footer>
