@@ -1,3 +1,14 @@
+import sys
+import os
+import tempfile
+
+# CRITICAL FIX: macOS PyInstaller --windowed apps have no stdout/stderr.
+# Printing anything causes "OSError: [Errno 9] Bad file descriptor" and crash.
+if getattr(sys, 'frozen', False):
+    log_path = os.path.join(tempfile.gettempdir(), 'macbase_app.log')
+    sys.stdout = open(log_path, 'w', buffering=1)
+    sys.stderr = sys.stdout
+
 from fastapi import FastAPI, HTTPException, Depends, Query, BackgroundTasks, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -31,7 +42,11 @@ app.add_middleware(
 )
 
 from services.twic_service import TWICService
-from services.database import SessionLocal, Game, ExcludedIssue, RepertoireFolder, RepertoireGame
+from services.database import SessionLocal, Game, ExcludedIssue, RepertoireFolder, RepertoireGame, init_db
+
+@app.on_event("startup")
+def on_startup():
+    init_db()
 
 def get_db():
     db = SessionLocal()
