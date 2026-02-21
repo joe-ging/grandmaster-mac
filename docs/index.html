@@ -98,14 +98,24 @@
                     <li>All data lives on your Mac — no cloud, no account</li>
                 </ul>
             </div>
-            <div class="feature-screenshot-stack">
-                <div class="feature-screenshot">
-                    <img src="screenshots/dashboard.png" alt="macbase Dashboard — TWIC issues and major events"
-                        loading="lazy">
+            <div class="screenshot-carousel" data-carousel>
+                <div class="carousel-viewport">
+                    <div class="carousel-slide active">
+                        <div class="feature-screenshot">
+                            <img src="screenshots/dashboard.png" alt="macbase Dashboard — TWIC issues and major events"
+                                loading="lazy">
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="feature-screenshot">
+                            <img src="screenshots/dashboard2.png"
+                                alt="macbase Dashboard — database health and manual import" loading="lazy">
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-screenshot">
-                    <img src="screenshots/dashboard2.png" alt="macbase Dashboard — database health and manual import"
-                        loading="lazy">
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" data-index="0" aria-label="Screenshot 1"></button>
+                    <button class="carousel-dot" data-index="1" aria-label="Screenshot 2"></button>
                 </div>
             </div>
         </div>
@@ -128,18 +138,31 @@
                     <li>Unlimited games — your database grows as you import</li>
                 </ul>
             </div>
-            <div class="feature-screenshot-stack">
-                <div class="feature-screenshot">
-                    <img src="screenshots/database2.png"
-                        alt="macbase Database — MY STUDY toggle and analyzed games list" loading="lazy">
+            <div class="screenshot-carousel" data-carousel>
+                <div class="carousel-viewport">
+                    <div class="carousel-slide active">
+                        <div class="feature-screenshot">
+                            <img src="screenshots/database2.png"
+                                alt="macbase Database — MY STUDY toggle and analyzed games list" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="feature-screenshot">
+                            <img src="screenshots/database.png"
+                                alt="macbase Database — filters: player, ELO, ECO, event" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="feature-screenshot">
+                            <img src="screenshots/database3.png"
+                                alt="macbase Database — ECO opening code search with full names" loading="lazy">
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-screenshot">
-                    <img src="screenshots/database.png" alt="macbase Database — filters: player, ELO, ECO, event"
-                        loading="lazy">
-                </div>
-                <div class="feature-screenshot">
-                    <img src="screenshots/database3.png"
-                        alt="macbase Database — ECO opening code search with full names" loading="lazy">
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" data-index="0" aria-label="Screenshot 1"></button>
+                    <button class="carousel-dot" data-index="1" aria-label="Screenshot 2"></button>
+                    <button class="carousel-dot" data-index="2" aria-label="Screenshot 3"></button>
                 </div>
             </div>
         </div>
@@ -409,6 +432,22 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.querySelectorAll('[data-carousel]').forEach(carousel => {
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const dots = carousel.querySelectorAll('.carousel-dot');
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const idx = parseInt(dot.dataset.index);
+                    slides.forEach(s => s.classList.remove('active'));
+                    dots.forEach(d => d.classList.remove('active'));
+                    slides[idx].classList.add('active');
+                    dots[idx].classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

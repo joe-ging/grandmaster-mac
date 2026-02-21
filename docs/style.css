@@ -342,14 +342,63 @@ body {
     box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 32px var(--neon-glow);
 }
 
-.feature-screenshot-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+.screenshot-carousel {
+    position: relative;
+    width: 100%;
 }
 
-.feature-screenshot-stack .feature-screenshot {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 16px var(--neon-glow);
+.carousel-viewport {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+}
+
+.carousel-slide.active {
+    display: block;
+    animation: fade-in 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0;
+}
+
+.carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.carousel-dot.active {
+    background: var(--neon-lime);
+    box-shadow: 0 0 10px var(--neon-glow);
 }
 
 .feature-screenshot img {
