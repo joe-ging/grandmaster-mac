@@ -193,13 +193,14 @@ DAY 2 — Sat Feb 22 (4 hrs) 🔧 IN PROGRESS
 │ ✅ Update pricing: free for first 100 users         │
 │ ✅ Take full app screenshots (carousel design)      │
 │ ✅ Add screenshots to landing page                  │
-│ 🔧 Set up Google Form (email gate for downloads)   │
-│    - Collect: name, email, chess rating (optional)  │
-│    - On submit: redirect to GitHub Releases         │
-│    - Track download count in Google Sheet           │
+│ ✅ Set up Tally.so form (email gate for downloads)  │
+│    - Accessible in China (unlike Google Forms)      │
+│    - On submit: auto-redirects to direct DMG link   │
+│ ✅ Add live download counter to landing page        │
+│    - Fetches count from GitHub Releases API         │
 │ ⬜ Package unsigned DMG + test install              │
 │                                                     │
-│ Result: Downloadable app + landing page + email list│
+│ Result: Downloadable app + landing page + count     │
 └─────────────────────────────────────────────────────┘
 
 DAY 3 — Sun Feb 23 (4 hrs)
@@ -305,41 +306,37 @@ DAYS 6-10 — FEEDBACK SPRINT
 
 ## 5. Download Gating & Email Collection
 
-### Approach: Google Form → GitHub Releases
+### Approach: Tally.so → Direct DMG Download
 
-**Why not Gumroad:** Avoid 10% cut, retain control over payment options for future.
+**Why Tally.so:** Fully accessible in China (Google Forms is blocked). Clean UI. Free tier includes auto-redirects.
 
 **Flow:**
 ```
 Landing Page "Download" button
-  → Google Form (collects email, name, optional chess rating)
-    → Form confirmation page with GitHub Releases link
-      → User downloads DMG from GitHub Releases
+  → Opens Tally.so form (collects email)
+    → On complete: auto-redirects to direct GitHub DMG file link
+      → Download starts immediately (bypassing GitHub UI)
 ```
 
 **What this gives us:**
-1. **Email list** — Google Sheet auto-collects all form responses
-2. **Download count** — count rows in sheet = download count
-3. **User demographics** — optional chess rating shows who our users are
-4. **Manual limit enforcement** — after 100 entries, update form to say "free period ended"
-5. **No vendor lock-in** — can switch to Stripe/Paddle/Ko-fi later
+1. **Email list** — We have their contact info
+2. **China compatibility** — No blocks.
+3. **Zero-friction download** — Users never have to figure out the GitHub Releases page.
+4. **Live download count** — We will fetch the download count directly from the GitHub API and show it on the landing page (e.g., "12 / 100 free downloads claimed").
 
-**Google Form fields:**
-- Email (required)
-- Name (optional)
-- Chess rating / platform (optional, e.g. "1800 Lichess" or "1650 FIDE")
-- How did you find macbase? (optional dropdown: HN, PH, Reddit, Twitter, Friend, Other)
+**Tally.so setup:**
+- Field: Email (required)
+- Settings: "Redirect on completion" → `https://github.com/joe-ging/macbase/releases/latest/download/macbase.dmg`
 
 **After 100 downloads:**
-- Update Google Form to show "Free period has ended"
-- Add payment link (Stripe Checkout or similar) before download
-- Keep GitHub Releases public (it's open source) but gate the DMG
+- Update Tally form to say "Free period has ended" and remove redirect.
+- Replace link on website with Stripe/Paddle checkout link.
 
 ### TODO
-- [ ] Create Google Form with fields above
-- [ ] Create Google Sheet for responses
-- [ ] Wire up landing page "Download" button → Google Form
-- [ ] Set up email notification when new form response received
+- [ ] Create Tally.so form (ask for email)
+- [ ] Make Tally form redirect to DMG URL
+- [ ] Wire up landing page "Download" button to Tally form
+- [ ] Add GitHub API script to landing page to show current download count
 
 ---
 
