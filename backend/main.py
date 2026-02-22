@@ -55,9 +55,11 @@ def on_startup():
 # Safe import for Pro Logic
 try:
     from pro import pro_logic
+    from pro import coach_logic
     PRO_AVAILABLE = True
 except ImportError:
     PRO_AVAILABLE = False
+    coach_logic = None
 
 def get_db():
     db = SessionLocal()
@@ -118,6 +120,7 @@ def get_issue_events(issue_num):
 @app.get("/api/twic-issues")
 def get_twic_issues(limit: int = 15):
     """Fetch latest TWIC issues from theweekinchess.com"""
+    global _twic_issues_cache
     if PRO_AVAILABLE:
         try:
             return pro_logic.get_twic_issues_pro(limit, _twic_issues_cache, TWIC_CACHE_DURATION, SessionLocal, Game, ExcludedIssue, import_status, get_issue_events)
@@ -126,7 +129,6 @@ def get_twic_issues(limit: int = 15):
             # Fallback to basic scraper logic or promotion
             pass
             
-    global _twic_issues_cache
     
     # Return cached data if fresh
     if _twic_issues_cache["data"] and _twic_issues_cache["fetched_at"]:
@@ -245,8 +247,24 @@ def get_twic_issues(limit: int = 15):
             _twic_issues_cache["data"] = issues
             _twic_issues_cache["fetched_at"] = datetime.now()
 
+            # Protection for Community Core: Only allow latest 3 issues to be seen/processed
+            processed_issues = issues[:limit]
+            if not PRO_AVAILABLE:
+                # Return only top 3, mark others as Pro
+                processed_issues = []
+                for i, issue in enumerate(issues[:limit]):
+                    if i < 3:
+                        processed_issues.append(issue)
+                    else:
+                        # Optionally include placeholders or just truncate
+                        pass
+                
+                # Add a promo indicator to the first item or as a separate field
+                if processed_issues:
+                    processed_issues[0]["promo_msg"] = "Upgrade to Pro to unlock 1,500+ historical TWIC issues."
+
             # Return and inject status
-            for issue in issues[:limit]:
+            for issue in processed_issues:
                 issue_num = issue["issue"]
                 exists = db.query(Game).filter(Game.twic_issue == issue_num).first()
                 excluded = db.query(ExcludedIssue).filter(ExcludedIssue.twic_issue == issue_num).first()
@@ -261,7 +279,7 @@ def get_twic_issues(limit: int = 15):
                 else:
                     issue["processing"] = False
                     
-            return issues[:limit]
+            return processed_issues
         finally:
             db.close()
 
@@ -312,6 +330,19 @@ def import_twic_task(issue_number: int):
 
 @app.post("/api/fetch-twic/{issue_number}")
 def fetch_twic(issue_number: int, background_tasks: BackgroundTasks):
+    # Protection for Community Core: Only allow importing of recent issues
+    if not PRO_AVAILABLE:
+        # Check if this is one of the top 3 issues
+        # We look at the cache safely
+        top_issues = (_twic_issues_cache.get("data") or [])[:3]
+        top_nums = [i["issue"] for i in top_issues]
+        
+        if issue_number not in top_nums:
+            return {
+                "status": "error", 
+                "message": f"Issue {issue_number} is a Pro feature. Community Core only supports the 3 most recent issues."
+            }
+
     # Check if already processing
     if issue_number in import_status and import_status[issue_number]["status"] == "processing":
         return {"status": "processing", "message": f"Import for {issue_number} is already in progress"}
@@ -501,18 +532,42 @@ def get_stats(db: Session = Depends(get_db)):
     }
 
 @app.get("/api/insights")
-def get_insights(min_elo: int = 1700, max_elo: int = 2000, db: Session = Depends(get_db)):
-    if PRO_AVAILABLE:
-        try:
-            return pro_logic.get_insights_pro(min_elo, max_elo, db, ExcludedIssue, Game, ECO_DICT)
-        except Exception as e:
-            print(f"Pro insights logic failed: {e}")
-            return {"error": "Insights temporarily unavailable", "detail": str(e)}
+def get_insights(min_elo: int = 1800, max_elo: int = 3000, db: Session = Depends(get_db)):
+    if not PRO_AVAILABLE:
+        # Return promotional/educational data for Core users
+        return {
+            "is_pro": False,
+            "message": "Professional Insights (OTB Data Aggregation) is a Pro feature.",
+            "white_e4": [
+                {"name": "Sicilian Defense (Premium)", "eco": "B20", "win_rate": 54.2, "count": 1250},
+                {"name": "French Defense (Premium)", "eco": "C00", "win_rate": 51.1, "count": 890}
+            ],
+            "white_all": [], "black_vs_e4": [], "black_vs_d4": [], "popularity_trend": []
+        }
+    return pro_logic.get_insights_pro(min_elo, max_elo, db, ExcludedIssue, Game, ECO_DICT)
 
-    # If pro logic is missing (Public Core), return promotion data
+@app.get("/api/coach/analyze/{username}")
+def analyze_coach_user(username: str):
+    if not PRO_AVAILABLE or coach_logic is None:
+        return {
+            "is_pro": False,
+            "message": "The AI Coach Neural Link is a Pro feature. Upgrade to analyze your Lichess games."
+        }
+    
+    # 1. Fetch from Lichess
+    pgn_text = coach_logic.fetch_lichess_games(username)
+    
+    # 2. Analyze Blindspots
+    analysis = coach_logic.analyze_pgn_flow(pgn_text)
+    
+    # 3. Generate Coach Context
+    context = coach_logic.generate_coach_context(analysis)
+    
     return {
-        "white_e4": [], "white_all": [], "black_vs_e4": [], "black_vs_d4": [], "popularity_trend": [],
-        "promo": "Upgrade to macbase Pro to unlock Opening Performance Analytics and Live Trend charts."
+        "is_pro": True,
+        "username": username,
+        "stats": analysis["stats"],
+        "coach_context": context
     }
 
 class PgnRequest(BaseModel):
