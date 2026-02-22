@@ -26,6 +26,25 @@ The demand for a native Mac chess studio is real. **If you're using the code, pl
 
 ---
 
+## 🌟 Support the Project (Supporters Wall)
+We want to celebrate our early community! 
+
+**The Incentive:** Whomever stars this project on GitHub **during the launch week** will have their handle added to our **Supporters Wall** in the next release. 
+
+---
+
+### 🚀 **MILESTONE: 15 STARS UNLOCKS 'NEURAL LINK'**
+Once this project hits **15 Stars**, we will begin incorporating the **Claude-powered AI Coach** directly into the Macbase ecosystem.
+
+**The Vision:**
+Imagine finishing a blitz session on Lichess.org, then instantly receiving core improvement insights and tactical blindspot alerts pushed directly to your **macbase desktop** and your **WhatsApp/Telegram** via our Neural Link engine.
+
+No more manual analysis. No more procrastinating. Just pure, automated growth.
+
+[**⭐ Star this Repo now to push the roadmap forward**](https://github.com/joe-ging/macbase)
+
+---
+
 ## 🌎 Open Core Model
 Macbase follows an **Open Core** model. We believe professional technical tools should have a transparent foundation. 
 - **The Community Core (This Repo):** The foundational chess engine, database architecture, and native macOS desktop framework. 
@@ -65,25 +84,6 @@ Build and practice your opening repertoire with spaced-repetition flashcards. Tr
   <img src="docs/screenshots/repertoire1.png" width="400" alt="opening repertoire" />
   <img src="docs/screenshots/repertoire2.png" width="400" alt="repertoire flashcards" />
 </p>
-
----
-
-## 🌟 Support the Project (Supporters Wall)
-We want to celebrate our early community! 
-
-**The Incentive:** Whomever stars this project on GitHub **during the launch week** will have their handle added to our **Supporters Wall** in the next release. 
-
----
-
-### 🚀 **MILESTONE: 15 STARS UNLOCKS 'NEURAL LINK'**
-Once this project hits **15 Stars**, we will begin incorporating the **Claude-powered AI Coach** directly into the Macbase ecosystem.
-
-**The Vision:**
-Imagine finishing a blitz session on Lichess.org, then instantly receiving core improvement insights and tactical blindspot alerts pushed directly to your **macbase desktop** and your **WhatsApp/Telegram** via our Neural Link engine.
-
-No more manual analysis. No more procrastinating. Just pure, automated growth.
-
-[**⭐ Star this Repo now to push the roadmap forward**](https://github.com/joe-ging/macbase)
 
 ---
 
