@@ -52,37 +52,43 @@ Macbase follows an **Open Core** model. We believe professional technical tools 
 
 ---
 
-## 🖼️ Feature Showcase
+## 🖼️ Feature Showcase (The Full Tour)
 
-### 1. Command Center (Dashboard)
-Stay current with the world of elite chess. Import the latest [TWIC](https://theweekinchess.com) issues with a single click and monitor your database growth.
+### 1. Unified Dashboard
+Stay at the center of the chess world. Monitor your progress, track database size, and import the latest professional games with a single click.
 <p align="center">
-  <img src="docs/screenshots/dashboard.png" width="800" alt="macbase dashboard" />
+  <img src="docs/screenshots/dashboard1.png" width="400" />
+  <img src="docs/screenshots/dashboard2.png" width="400" />
 </p>
 
-### 2. Deep Analysis & Annotation
-Designed for the serious player. Draw tactical arrows, highlight focus squares, and run Stockfish with Multi-PV directly on your Mac. No cloud lag, no browser limits.
+### 2. Live Analysis & Tactics
+Native Multi-PV Stockfish 16.1 integration. Draw tactical arrows, highlight squares, and annotate games with professional clarity.
 <p align="center">
-  <img src="docs/screenshots/analysis1.png" width="800" alt="chess analysis" />
+  <img src="docs/screenshots/analysis1.png" width="266" />
+  <img src="docs/screenshots/analysis2.png" width="266" />
+  <img src="docs/screenshots/analysis3.png" width="266" />
 </p>
 
-### 3. Intelligence Database
-Browse millions of games with lightning speed. Filter by player, rating, opening (ECO), or tournament. Open any game into analysis mode instantly.
+### 3. Master Intelligence Database
+Lightning-fast filtering of millions of games. Search by ECO code, player, rating, or year.
 <p align="center">
-  <img src="docs/screenshots/database.png" width="800" alt="game database" />
+  <img src="docs/screenshots/database1.png" width="266" />
+  <img src="docs/screenshots/database2.png" width="266" />
+  <img src="docs/screenshots/database3.png" width="266" />
 </p>
 
-### 4. Professional Insights (Pro)
-Identify your blind spots. Our professional engine analyzes your local games to find tactical patterns and opening weaknesses you didn't know you had.
+### 4. Pro Insights & Blindspot Detection
+Identify exactly where your game is breaking. Analyze your own PGNs to find recurring tactical themes and opening mistakes.
 <p align="center">
-  <img src="docs/screenshots/insight1.png" width="800" alt="chess insights" />
+  <img src="docs/screenshots/insight1.png" width="400" />
+  <img src="docs/screenshots/insight2.png" width="400" />
 </p>
 
-### 5. Repertoire Architect (Pro)
-Build and practice your opening repertoire with spaced-repetition flashcards. Track your win rates across specific variations and prepare for your next tournament opponent.
+### 5. Repertoire Architect & Flashcards
+Build your white and black repertoire and practice it daily using our native spaced-repetition engine.
 <p align="center">
-  <img src="docs/screenshots/repertoire1.png" width="400" alt="opening repertoire" />
-  <img src="docs/screenshots/repertoire2.png" width="400" alt="repertoire flashcards" />
+  <img src="docs/screenshots/repertoire1.png" width="400" />
+  <img src="docs/screenshots/repertoire2.png" width="400" />
 </p>
 
 ---
@@ -91,10 +97,26 @@ Build and practice your opening repertoire with spaced-repetition flashcards. Tr
 
 Because we are in a limited Beta launch (**Free for the first 100 users**), we distribute the app through our official storefront to ensure you receive the full Pro Beta experience.
 
+### **1. Download & Move**
 1. **Visit** the [Official Storefront](https://joe-ging.github.io/macbase-app/).
 2. **Claim your copy** by providing your email (to receive your download link).
 3. **Download** the `macbase.dmg`.
-4. **First Run:** Since the app is currently in Beta and unsigned, you must **Right-click** the app and select **Open** for the first run.
+4. **Move** the `macbase` app to your **Applications** folder.
+
+### **2. Bypassing macOS Gatekeeper (Critical Step)**
+Since macbase is an independent indie project and currently unsigned, macOS will flag it as "blocked" or "malware". Use one of the two methods below:
+
+#### **Method A: The Quick Shortcut (90% of cases)**
+- **Right-Click (or Control-Click)** the `macbase` icon in your Applications folder and select **Open**.
+- This will trigger a dialog with an **Open** button that is not visible with a normal double-click.
+
+#### **Method B: System Settings (If Method A fails)**
+1. Double-click the app. When the "Blocked" warning appears, click **OK**.
+2. Open **System Settings** ➡️ **Privacy & Security**.
+3. Scroll down to the **Security** section.
+4. Look for the message: *"macbase was blocked from use because it is not from an identified developer."*
+5. Click **Open Anyway**.
+6. Enter your Mac password when prompted.
 
 ---
 
@@ -105,7 +127,7 @@ If you want to contribute to the Community Core or build from source:
 ### Prerequisites
 - Python 3.12+
 - Node.js 20+
-- [Stockfish](https://stockfishchess.org/download/) (Expected at system level)
+- [Stockfish](https://stockfishchess.org/download/)
 
 ### Steps
 1. **Clone & Setup:**
