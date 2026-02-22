@@ -123,7 +123,13 @@ If the button does not appear in settings, open your **Terminal** and run:
 ```bash
 xattr -cr /Applications/macbase.app
 ```
-This forces macOS to trust the application instantly. Any icon display issues (placeholder) will resolve after the first successful launch.
+This forces macOS to trust the application instantly.
+
+#### **Method D: Run from Source (The Unblockable Fallback)**
+Since macbase is Open Core, you can always bypass binary restrictions by running the source code directly:
+1. Clone this repository.
+2. Follow the **Development Setup** instructions below.
+3. **Why:** macOS never blocks interpreted code from running via Python/Node.js.
 
 ---
 
