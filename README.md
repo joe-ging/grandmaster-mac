@@ -114,11 +114,16 @@ Since macbase is an independent indie project and currently unsigned, macOS will
 
 #### **Method B: System Settings (If Method A fails)**
 1. Double-click the app. When the "Blocked" warning appears, click **OK**.
-2. Open **System Settings** ➡️ **Privacy & Security**.
-3. Scroll down to the **Security** section.
-4. Look for the message: *"macbase was blocked from use because it is not from an identified developer."*
-5. Click **Open Anyway**.
-6. Enter your Mac password when prompted.
+2. **Immediately** open **System Settings** ➡️ **Privacy & Security** (the button only appears for 5 minutes after the failure).
+3. Scroll down to the **Security** section and look for the **Open Anyway** button.
+4. Enter your Mac password when prompted.
+
+#### **Method C: The Sequoia Ultimate Fix (v15+)**
+If the button does not appear in settings, open your **Terminal** and run:
+```bash
+xattr -cr /Applications/macbase.app
+```
+This forces macOS to trust the application instantly. Any icon display issues (placeholder) will resolve after the first successful launch.
 
 ---
 
