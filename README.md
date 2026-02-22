@@ -8,7 +8,16 @@ Macbase provides a distraction-free, world-class interface for analyzing the tou
 
 ---
 
-### 🚨 **COMMUNITY MOMENTUM**
+### 🚨 **CRITICAL: CLONING VS. DOWNLOADING**
+**This repository contains the Community Core only.** 
+
+Cloning this repo allows you to see the architecture and contribute to the foundational engine. However, to get the **full professional experience**—including the AI Coach "Neural Link," automated TWIC synchronization, and professional Tactical Insights—you **must** download the official DMG distribution.
+
+👉 [**Download the Full Pro Experience here**](https://joe-ging.github.io/macbase-app/)
+
+---
+
+### 📊 **COMMUNITY MOMENTUM**
 In the first **8 hours** of our silent community preview:
 - 📈 **300+ Total Clones**
 - 👤 **141 Unique Developers/Players** cloned this from their terminals.
@@ -17,51 +26,64 @@ The demand for a native Mac chess studio is real. **If you're using the code, pl
 
 ---
 
-## 🌎 Open Core & Community
+## 🌎 Open Core Model
+Macbase follows an **Open Core** model. We believe professional technical tools should have a transparent foundation. 
+- **The Community Core (This Repo):** The foundational chess engine, database architecture, and native macOS desktop framework. 
+- **The Pro Distribution:** Proprietary features like the AI Coach, cloud-sync repertoire, and professional game insights.
 
-Macbase follows an **Open Core** model. The repository you see here contains the **Community Core**—the foundational engine, database architecture, and native macOS desktop environment. 
+---
 
-We believe professional tools should be accessible to everyone, which is why the core is open source. To sustain development, proprietary features (like advanced tactical arrows, professional insights, and the TWIC auto-sync service) are part of the **Pro Beta** distribution.
+## 🖼️ Feature Showcase
+
+### 1. Command Center (Dashboard)
+Stay current with the world of elite chess. Import the latest [TWIC](https://theweekinchess.com) issues with a single click and monitor your database growth.
+<p align="center">
+  <img src="docs/screenshots/dashboard.png" width="800" alt="macbase dashboard" />
+</p>
+
+### 2. Deep Analysis & Annotation
+Designed for the serious player. Draw tactical arrows, highlight focus squares, and run Stockfish with Multi-PV directly on your Mac. No cloud lag, no browser limits.
+<p align="center">
+  <img src="docs/screenshots/analysis1.png" width="800" alt="chess analysis" />
+</p>
+
+### 3. Intelligence Database
+Browse millions of games with lightning speed. Filter by player, rating, opening (ECO), or tournament. Open any game into analysis mode instantly.
+<p align="center">
+  <img src="docs/screenshots/database.png" width="800" alt="game database" />
+</p>
+
+### 4. Professional Insights (Pro)
+Identify your blind spots. Our professional engine analyzes your local games to find tactical patterns and opening weaknesses you didn't know you had.
+<p align="center">
+  <img src="docs/screenshots/insight1.png" width="800" alt="chess insights" />
+</p>
+
+### 5. Repertoire Architect (Pro)
+Build and practice your opening repertoire. Track your win rates across specific variations and prepare for your next tournament opponent.
+<p align="center">
+  <img src="docs/screenshots/repertoire1.png" width="800" alt="opening repertoire" />
+</p>
 
 ---
 
 ## 🌟 Support the Project (Supporters Wall)
-
 We want to celebrate our early community! 
 
-**The Incentive:** Whomever stars this project on GitHub **during the launch week** will have their handle added to our **Supporters Wall** in the next release. If you've contributed to the project's visibility, we want you to be part of our history.
-
-**DON'T BE A SHADOW CLONER:** If you're building with the core or analyzing games with it, click the star to let us know you're here. 
+**The Incentive:** Whomever stars this project on GitHub **during the launch week** will have their handle added to our **Supporters Wall** in the next release. 
 
 [**⭐ Star this Repo now to join the Wall**](https://github.com/joe-ging/macbase)
 
 ---
 
-## 🖼️ Showcase
-
-### Deep Analysis & Annotation
-Draw green/pink arrows, highlight squares, and run Stockfish with Multi-PV directly on your Mac.
-<p align="center">
-  <img src="docs/screenshots/analysis1.png" width="800" />
-</p>
-
-### Intelligence Database
-Import thousands of real OTB tournament games from [The Week in Chess (TWIC)](https://theweekinchess.com) with one click.
-<p align="center">
-  <img src="docs/screenshots/database.png" width="800" />
-</p>
-
----
-
 ## 🚀 Installation (How to get the App)
 
-Because we are in a limited Beta launch (Free for the first 100 users), we distribute the app through our official storefront to ensure you receive the latest **Pro Beta** features and updates.
+Because we are in a limited Beta launch (**Free for the first 100 users**), we distribute the app through our official storefront to ensure you receive the full Pro Beta experience.
 
 1. **Visit** the [Official Storefront](https://joe-ging.github.io/macbase-app/).
-2. **Claim your copy** by providing your email (to receive your unique download link and future beta updates).
+2. **Claim your copy** by providing your email (to receive your download link).
 3. **Download** the `macbase.dmg`.
-4. **Move** the `macbase` app to your **Applications** folder.
-5. **Open:** Since the app is currently in Beta and unsigned, you must **Right-click** the app and select **Open** for the first run.
+4. **First Run:** Since the app is currently in Beta and unsigned, you must **Right-click** the app and select **Open** for the first run.
 
 ---
 
@@ -75,28 +97,25 @@ If you want to contribute to the Community Core or build from source:
 - [Stockfish](https://stockfishchess.org/download/) (Expected at system level)
 
 ### Steps
-1. **Clone the Repo:**
+1. **Clone & Setup:**
    ```bash
    git clone https://github.com/joe-ging/macbase.git
    cd macbase
+   ./toggle_pro.py core
    ```
-2. **Setup:** Run `./toggle_pro.py core` to ensure you are in the public build state.
-3. **Backend:** Install requirements in `backend/requirements.txt` and run `main.py`.
-4. **Frontend:** Run `npm install` and `npm run dev` in the `frontend` directory.
+2. **Backend:** Install requirements in `backend/requirements.txt` and run `main.py`.
+3. **Frontend:** Run `npm install` and `npm run dev` in the `frontend` directory.
 
 ---
 
 ## 🚩 Feedback & Bug Reports
-
-Found a bug? Have a feature request? Please use our **Launch Feedback Form** to help us improve before the official Monday release:
-
+Found a bug? Use our Launch Feedback Form:
 👉 [**Report an Issue / Give Feedback**](https://tally.so/r/jayppa)
 
 ---
 
 ## 🙏 Credits
-
-- **Game Data:** Provided by [The Week in Chess (TWIC)](https://theweekinchess.com/) — Support them via [donation](https://theweekinchess.com/twic).
+- **Game Data:** [The Week in Chess (TWIC)](https://theweekinchess.com/)
 - **Engine:** [Stockfish Chess](https://stockfishchess.org/)
 - **Built with:** FastAPI, React, SQLite.
 
