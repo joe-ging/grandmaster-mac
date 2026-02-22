@@ -73,7 +73,17 @@ We want to celebrate our early community!
 
 **The Incentive:** Whomever stars this project on GitHub **during the launch week** will have their handle added to our **Supporters Wall** in the next release. 
 
-[**⭐ Star this Repo now to join the Wall**](https://github.com/joe-ging/macbase)
+---
+
+### 🚀 **MILESTONE: 15 STARS UNLOCKS 'NEURAL LINK'**
+Once this project hits **15 Stars**, we will begin incorporating the **Claude-powered AI Coach** directly into the Macbase ecosystem.
+
+**The Vision:**
+Imagine finishing a blitz session on Lichess.org, then instantly receiving core improvement insights and tactical blindspot alerts pushed directly to your **macbase desktop** and your **WhatsApp/Telegram** via our Neural Link engine.
+
+No more manual analysis. No more procrastinating. Just pure, automated growth.
+
+[**⭐ Star this Repo now to push the roadmap forward**](https://github.com/joe-ging/macbase)
 
 ---
 
