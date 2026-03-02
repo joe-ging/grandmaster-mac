@@ -21,8 +21,8 @@ Cloning this repo allows you to see the architecture and contribute to the found
 
 ### 📊 **COMMUNITY MOMENTUM (As of Feb 25, 2026)**
 The demand for a native Mac chess studio is real. In our silent community preview:
-- 📈 **478 Total Clones** in the last 14 days.
-- 👤 **202 Unique Developers/Players** have deployed this from their terminals.
+- 📈 **493 Total Clones** in the last 14 days.
+- 👤 **211 Unique Developers/Players** have deployed this from their terminals.
 - ⭐ **0 Stars... so far!** 
 
 **The Hidden Demand:** If you are one of the 200+ users who cloned the repo but haven't starred it yet—please leave a ⭐ Star! It's the only way we can bypass the "New Project" stigma and hit our next milestone to unlock the AI Coach.
